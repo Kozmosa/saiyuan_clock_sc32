@@ -1,0 +1,20 @@
+--cpu Cortex-M0+
+"..\output\main.o"
+"..\output\system_sc32f1xxx.o"
+"..\output\sc_it.o"
+"..\output\sc_init.o"
+"..\output\sysfunvardefine.o"
+"..\output\compctrldefine.o"
+"..\output\callbackfunction.o"
+"..\output\sc32f1xxx_tim.o"
+"..\output\sc32f1xxx_uart.o"
+"..\output\sc32f1xxx_pwm.o"
+"..\output\sc32f1xxx_twi.o"
+"..\output\sc32f1xxx_option.o"
+"..\output\sc32f1xxx_rcc.o"
+"..\output\sc32f1xxx_gpio.o"
+"..\output\startup_sc32f10xx.o"
+--library_type=microlib --strict --scatter "..\Output\SinOneCup_OLED.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "..\List\SinOneCup_OLED.map" -o ..\Output\SinOneCup_OLED.axf

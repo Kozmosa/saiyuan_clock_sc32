@@ -1,0 +1,12 @@
+..\output\sc32f1xxx_rcc.o: ..\FWLib\SC32F1XXX_Lib\src\sc32f1xxx_rcc.c
+..\output\sc32f1xxx_rcc.o: ..\FWLib\SC32F1XXX_Lib\inc\sc32f1xxx_rcc.h
+..\output\sc32f1xxx_rcc.o: ..\FWLib\SC32F1XXX_Lib\inc\sc32f1xxx.h
+..\output\sc32f1xxx_rcc.o: ..\FWLib\SC32F1XXX_Lib\inc\SC32f10xx.h
+..\output\sc32f1xxx_rcc.o: ..\CMSIS\core_cm0plus.h
+..\output\sc32f1xxx_rcc.o: E:\AppDatas\MDK5\Keil_V5\ARM\ARMCOMPLIER506\Bin\..\include\stdint.h
+..\output\sc32f1xxx_rcc.o: ..\CMSIS\cmsis_version.h
+..\output\sc32f1xxx_rcc.o: ..\CMSIS\cmsis_compiler.h
+..\output\sc32f1xxx_rcc.o: ..\CMSIS\cmsis_armcc.h
+..\output\sc32f1xxx_rcc.o: ..\CMSIS\mpu_armv7.h
+..\output\sc32f1xxx_rcc.o: ..\FWLib\SC32F1XXX_Lib\inc\system_sc32f1xxx.h
+..\output\sc32f1xxx_rcc.o: ..\FWLib\SC32F1XXX_Lib\inc\sc32.h
