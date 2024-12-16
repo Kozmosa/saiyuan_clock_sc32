@@ -1,10 +1,10 @@
 [Project]
 Project.Name=SinOneCup_OLED
-Project.Path=E:\Projects\SinOneCup_TEST
-Project.KeilPath=E:\Projects\SinOneCup_TEST\Keil_C\
-Project.CurrentPath=E:\Projects\SinOneCup_TEST\SinOneCup_OLED.cgen
-Project.CreationTime=20241213203324
-Project.ModificationTime=20241216143659
+Project.Path=E:\Projects\saiyuan_clock_sc32
+Project.KeilPath=E:\Projects\saiyuan_clock_sc32\Keil_C\
+Project.CurrentPath=E:\Projects\saiyuan_clock_sc32\SinOneCup_OLED.cgen
+Project.CreationTime=20241216153509
+Project.ModificationTime=20241216162530
 Project.Version=EasyCodeCube 3.5.0
 Project.IsBootloaderProject=false
 Project.IsUnifiedVersionProject=True

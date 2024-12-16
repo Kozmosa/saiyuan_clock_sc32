@@ -28,6 +28,9 @@
   * @param
   */
 
+// disable semihosting mode
+#pragma import(__use_no_semihosting)             
+
 ////串口打印
 int fputc(int c, FILE* f)
 { 
@@ -36,6 +39,33 @@ int fputc(int c, FILE* f)
     UART_ClearFlag(UART0, UART_Flag_TX);
     return c;
 }
+
+// 串口输入
+int uart_getc()
+{
+    while(!UART_GetFlagStatus(UART0, UART_Flag_RX));
+    int c = UART_ReceiveData(UART0);
+    UART_ClearFlag(UART0, UART_Flag_RX);
+    return c;
+}
+
+char uart_getchar()
+{
+    return (char)uart_getc();
+}
+
+char uart_scanf(char *buffer)
+{
+    char c;
+    while((c = uart_getchar()) != '\n')
+    {
+        *buffer = c;
+        buffer++;
+    }
+    *buffer = '\0';
+    return 0;
+}
+
 
 ////延时函数
 void Delay(unsigned int time)
@@ -58,13 +88,17 @@ int main(void)
     OLED_Init();
     /*<UserCodeEnd>*//*<SinOne-Tag><36>*/
 /*<UserCodeStart>*//*<SinOne-Tag><4>*/
+    char read_buffer[128];
     /*****MainLoop*****/
     while(1)
     {
         /*<UserCodeStart>*//*<SinOne-Tag><14>*/
         /***User program***/
         unsigned int time = 20000;
-        printf("1120220");
+        // uart_scanf(read_buffer);
+        // printf("Read command: %s\n", read_buffer);
+        printf("test command\n");
+        
         OLED_ShowByte(64,5,0xFF);
         
         PC_BIT(10) = 0;

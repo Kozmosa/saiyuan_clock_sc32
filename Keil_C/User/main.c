@@ -41,12 +41,29 @@ int fputc(int c, FILE* f)
 }
 
 // ¥Æø⁄ ‰»Î
-int fgetc(FILE* f)
+int uart_getc()
 {
     while(!UART_GetFlagStatus(UART0, UART_Flag_RX));
     int c = UART_ReceiveData(UART0);
     UART_ClearFlag(UART0, UART_Flag_RX);
     return c;
+}
+
+char uart_getchar()
+{
+    return (char)uart_getc();
+}
+
+char uart_scanf(char *buffer)
+{
+    char c;
+    while((c = uart_getchar()) != '\n')
+    {
+        *buffer = c;
+        buffer++;
+    }
+    *buffer = '\0';
+    return 0;
 }
 
 
@@ -61,6 +78,16 @@ void Delay(unsigned int time)
             for(j=0; j<100; j++)
             ;
     /*<UserCodeEnd>*//*<SinOne-Tag><133>*/
+}
+
+void Beep(int times)
+{
+    for(int i = 0; i < times; i++) {
+        PWM_SetDuty(PWM0,PWM_Channel_1,500);
+        PWM_SetDuty(PWM0,PWM_Channel_2,500);
+        PWM_SetDuty(PWM0,PWM_Channel_3,500);
+        Delay(5000);
+    }
 }
 
 int main(void)
@@ -78,9 +105,12 @@ int main(void)
         /*<UserCodeStart>*//*<SinOne-Tag><14>*/
         /***User program***/
         unsigned int time = 20000;
-        scanf("%s\n", read_buffer);
-        printf("Read command: %s\n", read_buffer);
-        printf("1120220\n");
+        // uart_scanf(read_buffer);
+        // printf("Read command: %s\n", read_buffer);
+        printf("test_command\n");
+        printf("check_alarms\n");
+        
+        Beep(3);
         
         OLED_ShowByte(64,5,0xFF);
         
